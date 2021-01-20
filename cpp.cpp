@@ -1,33 +1,57 @@
 #include <iostream>
-using namespace std;
-int young(int n, int * arr){
-	int num=0;
-	for(int i =0;i<n;i++){
-		num+=(arr[i]/30)+1;
-	}
-	return 10*num;
-}
+#include <cstdlib>
+#include <cstring>
 
-int min(int n, int * arr){
-	int num=0;
-	for(int i =0;i<n;i++){
-		num+=(arr[i]/60)+1;
-	}
-	return 15*num;
-}
+
+using namespace std;
+
 int main(){
-	
-	int n;
-	cin>>n;
-	int * arr=new int[n];
-	for(int i=0;i<n;i++){
-		cin>>arr[i];
+	int width=1;
+	char str[5];
+	while(1){
+		cin>>str;
+		width=1;
+
+		if(atoi(str)==0)
+			break;
+		//cout<<strlen(str)<<endl;
+		for(int i=0;i<strlen(str);i++){
+			switch(str[i]){
+				case '0':
+					width+=5;
+					break;
+				case '1':
+					width+=3;
+					break;
+				case '2':
+					width+=4;
+					break;
+				case '3':
+					width+=4;
+					break;
+				case '4':
+					width+=4;
+					break;
+				case '5':
+					width+=4;
+					break;
+				case '6':
+					width+=4;
+					break;
+				case '7':
+					width+=4;
+					break;
+				case '8':
+					width+=4;
+					break;
+				case '9':
+					width+=4;
+					break;
+			}
+		}
+		//cout<<"width is "<<width<<endl;
+		cout<<width<<endl;
+
 	}
-	if(young(n,arr)<min(n,arr))
-		cout<<"Y "<<young(n,arr);
-	else if(young(n,arr)>min(n,arr))
-		cout<<"M "<<min(n,arr);
-	else
-		cout<<"Y M "<<young(n,arr);
 	return 0;
 }
