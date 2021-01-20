@@ -1,57 +1,20 @@
 #include <iostream>
-#include <cstdlib>
-#include <cstring>
-
-
 using namespace std;
 
-int main(){
-	int width=1;
-	char str[5];
-	while(1){
-		cin>>str;
-		width=1;
-
-		if(atoi(str)==0)
+int main() {
+	int N, F, i,n;
+	cin >> N >> F;
+	N /= 100;
+	N *= 100;
+	n = N;
+	for (i = 0; i < 100; i++) {
+		N = n+i;
+		if (N % F == 0)
 			break;
-		//cout<<strlen(str)<<endl;
-		for(int i=0;i<strlen(str);i++){
-			switch(str[i]){
-				case '0':
-					width+=5;
-					break;
-				case '1':
-					width+=3;
-					break;
-				case '2':
-					width+=4;
-					break;
-				case '3':
-					width+=4;
-					break;
-				case '4':
-					width+=4;
-					break;
-				case '5':
-					width+=4;
-					break;
-				case '6':
-					width+=4;
-					break;
-				case '7':
-					width+=4;
-					break;
-				case '8':
-					width+=4;
-					break;
-				case '9':
-					width+=4;
-					break;
-			}
-		}
-		//cout<<"width is "<<width<<endl;
-		cout<<width<<endl;
-
 	}
+	if (i < 10)
+		cout << "0" << i << endl;
+	else
+		cout << i << endl;
 	return 0;
 }
